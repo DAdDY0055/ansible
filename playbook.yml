@@ -1,0 +1,12 @@
+- hosts: nodes
+  vars:
+    sample_vars: software_design_2018
+  tasks:
+    - shell: uptime
+      register: result
+
+    - debug:
+        msg: "{{ result.stdout }}"
+
+    - debug:
+        msg: "{{ sample_vars }}"
